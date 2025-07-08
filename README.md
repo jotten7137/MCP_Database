@@ -56,18 +56,22 @@ DATABASE_CONFIG_FILE=./database_config.json
 ### 3. Database Configuration (database_config.json)
 ```json
 {
-  \"titanic_db\": {
-    \"database_type\": \"postgresql\",
-    \"host\": \"host.docker.internal\",
-    \"port\": 5432,
-    \"database\": \"titanic_db\", 
-    \"username\": \"postgres\",
-    \"password\": \"your_postgres_password\",
-    \"schema\": \"test_data\"
+  "local_sqlite": {
+    "database_type": "sqlite",
+    "database": "./sample_database.db"
   },
-  \"iris_db\": {
-    \"database_type\": \"sqlite\",
-    \"database\": \"./iris.sqlite\"
+  "titanic_db": {
+    "database_type": "postgresql",
+    "host": "host.docker.internal",
+    "port": 5432,
+    "database": "titanic_db",
+    "username": "postgres",
+    "password": "your_postgres_password",
+    "schema": "test_data"
+  },
+  "iris_db": {
+    "database_type": "sqlite",
+    "database": "./iris.sqlite"
   }
 }
 ```
@@ -187,8 +191,7 @@ MCP_RAG/
 │           ├── database.py    # Main database tool
 │           └── db_tools/      # Database implementations
 └── Documentation
-    ├── README.md              # This file
-    └── README_DATABASE.md     # Database setup guide
+    └── README.md     # This file
 ```
 
 ## 🚀 Current Configuration
