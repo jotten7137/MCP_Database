@@ -1,0 +1,19 @@
+{
+  "local_sqlite": {
+    "database_type": "sqlite",
+    "database": "./sample_database.db"
+  },
+  "titanic_db": {
+    "database_type": "postgresql",
+    "host": "host.docker.internal",
+    "port": 5432,
+    "database": "titanic_db",
+    "username": "postgres",
+    "password": "your_postgres_password",
+    "schema": "test_data"
+  },
+  "iris_db": {
+    "database_type": "sqlite",
+    "database": "./iris.sqlite"
+  }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-header">
+                    <h3>MCP Assistant</h3>
+                </div>
+                <div class="sidebar-content">
+                    <div class="settings-section">
+                        <h5>Settings</h5>
+                        <div class="mb-3">
+                            <label for="serverUrl" class="form-label">Server URL</label>
+                            <input type="text" class="form-control" id="serverUrl" value="http://localhost:8000">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apiKey" class="form-label">API Key</label>
+                            <input type="password" class="form-control" id="apiKey" value="your-secret-key-change-me">
+                        </div>
+                        <button id="testConnection" class="btn btn-outline-primary btn-sm">Test Connection</button>
+                        <div id="connectionStatus" class="mt-2"></div>
+                    </div>
+                    <!-- Add this to the sidebar in index.html under the settings section -->
+                    <div class="mb-3">
+                        <label for="voiceSettings" class="form-label">Voice Settings</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="enableVoice" checked>
+                            <label class="form-check-label" for="enableVoice">
+                                Enable Voice Responses
+                            </label>
+                        </div>
+                        <div class="mt-2" id="voiceOptions">
+                            <label for="voiceVolume" class="form-label">Volume</label>
+                            <input type="range" class="form-range" id="voiceVolume" min="0" max="1" step="0.1" value="1">
+                            
+                            <div class="d-flex justify-content-between mt-2">
+                                <button class="btn btn-sm btn-outline-secondary" id="testVoice">
+                                    <i class="fas fa-volume-up"></i> Test
+                                </button>
+                                <select class="form-select form-select-sm" id="voiceModel" style="width: 150px">
+                                    <option value="default">Default Voice</option>
+                                    <option value="tts_models/en/ljspeech/tacotron2-DDC">English (Female)</option>
+                                    <option value="tts_models/en/ljspeech/glow-tts">English (Alt)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions-section mt-4">
+                        <button id="clearChat" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Clear Chat</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <!-- Chat area -->
+                <div class="chat-container">
+                    <div id="chatMessages" class="chat-messages">
+                        <!-- Chat messages will be added here -->
+                    </div>
+                    
+                    <!-- Message input -->
+                    <div class="input-area">
+                        <ul class="nav nav-tabs" id="inputTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-input" type="button" role="tab" aria-controls="text-input" aria-selected="true">Text</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="voice-tab" data-bs-toggle="tab" data-bs-target="#voice-input" type="button" role="tab" aria-controls="voice-input" aria-selected="false">Voice</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content p-3 border border-top-0 rounded-bottom" id="inputTabsContent">
+                            <!-- Text input tab -->
+                            <div class="tab-pane fade show active" id="text-input" role="tabpanel" aria-labelledby="text-tab">
+                                <div class="input-group">
+                                    <input type="text" id="messageInput" class="form-control" placeholder="Type your message...">
+                                    <button id="sendMessage" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Voice input tab -->
+                            <div class="tab-pane fade" id="voice-input" role="tabpanel" aria-labelledby="voice-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="audio-controls text-center">
+                                            <button id="startRecording" class="btn btn-danger btn-lg mb-2">
+                                                <i class="fas fa-microphone"></i> Start Recording
+                                            </button>
+                                            <button id="stopRecording" class="btn btn-secondary btn-lg mb-2" disabled>
+                                                <i class="fas fa-stop"></i> Stop Recording
+                                            </button>
+                                            <div id="recordingStatus" class="mt-2"></div>
+                                            <div id="audioPlayback" class="mt-3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="manual-transcription">
+                                            <label for="transcriptionInput" class="form-label">Manual Transcription</label>
+                                            <textarea id="transcriptionInput" class="form-control mb-2" rows="3" placeholder="Type what you hear..."></textarea>
+                                            <button id="sendTranscription" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

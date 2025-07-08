@@ -1,0 +1,45 @@
+# Database connectivity requirements for MCP Server
+# Install based on which databases you need to connect to
+
+# Core database requirements (always needed)
+pandas>=2.0.0
+sqlalchemy>=2.0.0
+
+# PostgreSQL support
+asyncpg>=0.29.0
+
+# MySQL support  
+aiomysql>=0.2.0
+PyMySQL>=1.1.0
+
+# SQLite support (usually included with Python)
+aiosqlite>=0.19.0
+
+# Snowflake support
+snowflake-connector-python>=3.6.0
+
+# Optional: Additional database drivers
+# Oracle support
+# cx_Oracle>=8.3.0
+
+# Microsoft SQL Server support
+# aioodbc>=0.4.0
+# pyodbc>=4.0.0
+
+# MongoDB support (NoSQL)
+# motor>=3.3.0
+# pymongo>=4.6.0
+
+# Redis support
+# redis>=5.0.0
+# aioredis>=2.0.0
+
+# Elasticsearch support
+# elasticsearch>=8.11.0
+
+# BigQuery support
+# google-cloud-bigquery>=3.13.0
+
+# Utilities
+asyncio-throttle>=1.0.2
+typing-extensions>=4.8.0
