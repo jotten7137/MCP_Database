@@ -21,7 +21,7 @@ A sophisticated MCP (Model Context Protocol) starter project with voice, chat, a
 - **Titanic Dataset** (PostgreSQL) - 418 passenger records with demographics and survival data
 - **Iris Dataset** (SQLite) - 150 flower samples with measurements and species classification
 
-## 📋 Dependencies
+## Dependencies
 
 ### Required
 - **Ollama**: Download from [https://ollama.com/download](https://ollama.com/download)
@@ -32,7 +32,7 @@ A sophisticated MCP (Model Context Protocol) starter project with voice, chat, a
 ### Database Dependencies (Included)
 - pandas, sqlalchemy, asyncpg, aiomysql, aiosqlite
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Install and Configure Ollama
 ```bash
