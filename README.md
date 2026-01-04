@@ -2,20 +2,20 @@
 
 A sophisticated MCP (Model Context Protocol) starter project with voice, chat, and multi-database connectivity. Features intelligent tool calling with automatic natural language to SQL conversion across PostgreSQL and SQLite databases.
 
-## 🚀 Features
+## Features
 
 ### Core Functionality
-- 🎤 **Voice Input & Audio Responses** - Full speech-to-text and text-to-speech
-- 💬 **Text Chat Interface** - Clean web interface for queries
-- 🗄️ **Multi-Database Support** - PostgreSQL, SQLite with automatic query routing
-- 🤖 **Intelligent Tool Calling** - Weather, calculations, database queries
-- 🐳 **Docker Containerization** - Easy deployment and scaling
+-  **Voice Input & Audio Responses** - Full speech-to-text and text-to-speech
+-  **Text Chat Interface** - Clean web interface for queries
+-  **Multi-Database Support** - PostgreSQL, SQLite with automatic query routing
+-  **Intelligent Tool Calling** - Weather, calculations, database queries
+-  **Docker Containerization** - Easy deployment and scaling
 
 ### Database Capabilities
-- 🔍 **Natural Language to SQL** - Ask questions in plain English
-- 📊 **Cross-Database Queries** - Query multiple databases seamlessly
-- 🔒 **Security First** - Read-only access, query validation, credential protection
-- ⚡ **High Performance** - Optimized queries with automatic limits and timeouts
+-  **Natural Language to SQL** - Ask questions in plain English
+-  **Cross-Database Queries** - Query multiple databases seamlessly
+-  **Security First** - Read-only access, query validation, credential protection
+-  **High Performance** - Optimized queries with automatic limits and timeouts
 
 ### Current Datasets
 - **Titanic Dataset** (PostgreSQL) - 418 passenger records with demographics and survival data
@@ -89,7 +89,7 @@ docker run -d --name mcp-rag-container -p 8000:8000 mcp-rag
 - Open `index.html` in your browser, or
 - Navigate to `http://localhost:8000`
 
-## 💡 Usage Examples
+## Usage Examples
 
 ### Database Queries (Natural Language)
 **Titanic Dataset:**
@@ -113,7 +113,7 @@ docker run -d --name mcp-rag-container -p 8000:8000 mcp-rag
 - **Math**: \"Calculate 25 * 17 + 33\"
 - **Voice**: Click \"Voice\" tab for speech input
 
-## 🏗️ Architecture
+## Architecture
 
 ### System Overview
 ```
@@ -142,7 +142,7 @@ docker run -d --name mcp-rag-container -p 8000:8000 mcp-rag
 - **Database Manager** - Multi-database connection and query execution
 - **Audio Services** - Speech-to-text and text-to-speech
 
-## 🔧 Database Features
+## Database Features
 
 ### Supported Query Types
 - **Count Queries**: \"How many records...\"
@@ -164,7 +164,7 @@ docker run -d --name mcp-rag-container -p 8000:8000 mcp-rag
 - **Query Caching**: Smart caching for repeated queries
 - **Execution Timing**: Performance monitoring and logging
 
-## 📁 Project Structure
+## Project Structure
 ```
 MCP_RAG/
 ├── Core System
@@ -194,13 +194,13 @@ MCP_RAG/
     └── README.md     # This file
 ```
 
-## 🚀 Current Configuration
+## Current Configuration
 - **Model**: qwq:32b (Advanced reasoning model with excellent tool calling)
 - **Tools**: Weather API, Calculator, Multi-Database
 - **Audio**: Google Text-to-Speech (gTTS)
 - **Databases**: PostgreSQL (Titanic), SQLite (Iris)
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 1. **Ollama connection**: Ensure Ollama is running (`ollama serve`)
@@ -233,7 +233,7 @@ curl http://localhost:11434/api/tags
 docker exec mcp-rag-container python -c \"import asyncpg, sqlalchemy; print('Database deps OK')\"
 ```
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 ### Planned Features
 - **Additional Databases**: MySQL, MongoDB, Snowflake support
@@ -249,7 +249,7 @@ docker exec mcp-rag-container python -c \"import asyncpg, sqlalchemy; print('Dat
 - **Business Intelligence**: Sales, marketing, operational metrics
 - **IoT Data**: Sensor readings, device telemetry
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Areas for improvement:
 - Additional database drivers
@@ -258,10 +258,8 @@ Contributions welcome! Areas for improvement:
 - UI/UX improvements
 - Documentation and examples
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file for details.
 
 ---
-
-**Built with ❤️ using FastAPI, Ollama, and modern database technologies**
